@@ -1,56 +1,57 @@
 var input = [
-    [false, true, "Gustavo"],
-    [false, false, "Gabriel"],
-    [true, false, "Bruno"],
-    [false, true, "Thomas"],
-    [false, false, "Helio"],
+    { souEu: false, responsavel: true, nome: "Gustavo" },
+    { souEu: false, responsavel: false, nome: "Gabriel" },
+    { souEu: true, responsavel: false, nome: "Bruno" },
+    { souEu: false, responsavel: true, nome: "Thomas" },
+    { souEu: false, responsavel: false, nome: "Helio" },
 ];
-
 function customNameSort(array) {
-    let sorted = [];
-
+    var sorted = [];
     // find myself in input array
-    let me = array.find(({ 0: n }) => n === true);
-
-    // add my name to output array
-    sorted.push(me.at(-1));
-
-    // remove myself from input array
-    array.splice(array.indexOf(me), 1);
-
+    var me = array.filter(function (_a) {
+        var n = _a.souEu;
+        return n === true;
+    })[0];
+    if (me != undefined) {
+        // add my name to output array
+        sorted.push(me.nome);
+        // remove myself from input array
+        array.splice(array.indexOf(me), 1);
+    }
     // find admins of group in input array
-    let admins = array.filter(({ 1: n }) => n === true);
-
-    // sorting admins by name
-    sortedAdmins = admins.sort();
-
-    // iterating over admins
-    for (let a = 0; a < sortedAdmins.length; a++) {
-        // add admin to output array
-        let admin = sortedAdmins[a];
-        sorted.push(admin.at(-1));
-
-        // remove admin from input array
-        array.splice(array.indexOf(admin), 1);
+    var admins = array.filter(function (_a) {
+        var n = _a.responsavel;
+        return n === true;
+    });
+    if (admins != undefined) {
+        // sorting admins by name
+        var sortedAdmins = admins.sort();
+        // iterating over admins
+        for (var a = 0; a < sortedAdmins.length; a++) {
+            // add admin to output array
+            var admin = sortedAdmins[a];
+            sorted.push(admin.nome);
+            // remove admin from input array
+            array.splice(array.indexOf(admin), 1);
+        }
     }
-
     // find rest of members in input array
-    let members = array.filter(({ 1: n }) => n === false);
-
-    // sorting members
-    sortedMembers = members.sort();
-
-    // iterating over members
-    for (let m = 0; m < sortedMembers.length; m++) {
-        // add member to output array
-        let member = sortedMembers[m];
-        sorted.push(member.at(-1));
-
-        // remove member from input array
-        array.splice(array.indexOf(member), 1);
+    var members = array.filter(function (_a) {
+        var n = _a.responsavel;
+        return n === false;
+    });
+    if (members != undefined) {
+        // sorting members
+        var sortedMembers = members.sort();
+        // iterating over members
+        for (var m = 0; m < sortedMembers.length; m++) {
+            // add member to output array
+            var member = sortedMembers[m];
+            sorted.push(member.nome);
+            // remove member from input array
+            array.splice(array.indexOf(member), 1);
+        }
     }
-
     return sorted;
 }
-
 console.log(customNameSort(input));
