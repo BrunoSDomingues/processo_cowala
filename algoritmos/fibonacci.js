@@ -8,10 +8,12 @@ function fib(n) {
         init[i] = init[i - 1] + init[i - 2];
         arr.push(init[i]);
     }
-
+    
     return arr;
 }
 
-var num = parseInt(process.argv.slice(2));
+// Executar via terminal
+// var num = parseInt(process.argv.slice(2));
 
-console.log(fib(num));
+// Print do array
+// console.log(fib(num));
