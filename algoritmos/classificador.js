@@ -3,16 +3,14 @@ var input = [
     [false, false, "Gabriel"],
     [true, false, "Bruno"],
     [false, true, "Thomas"],
-    [false, false, "Helio"]
-]
+    [false, false, "Helio"],
+];
 
 function customNameSort(array) {
     let sorted = [];
 
     // find myself in input array
-    let me = array.find(({
-        0: n
-    }) => n === true);
+    let me = array.find(({ 0: n }) => n === true);
 
     // add my name to output array
     sorted.push(me.at(-1));
@@ -21,9 +19,7 @@ function customNameSort(array) {
     array.splice(array.indexOf(me), 1);
 
     // find admins of group in input array
-    let admins = array.filter(({
-        1: n
-    }) => n === true);
+    let admins = array.filter(({ 1: n }) => n === true);
 
     // sorting admins by name
     sortedAdmins = admins.sort();
@@ -39,9 +35,7 @@ function customNameSort(array) {
     }
 
     // find rest of members in input array
-    let members = array.filter(({
-        1: n
-    }) => n === false);
+    let members = array.filter(({ 1: n }) => n === false);
 
     // sorting members
     sortedMembers = members.sort();

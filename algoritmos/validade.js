@@ -2,7 +2,7 @@ function checkExpired(date, exp) {
     let today = new Date();
 
     myDate = new Date(date);
-    myDate.setDate(myDate.getDate() + parseInt(exp.slice(0, -1)))
+    myDate.setDate(myDate.getDate() + parseInt(exp.slice(0, -1)));
 
     return myDate > today;
 }
