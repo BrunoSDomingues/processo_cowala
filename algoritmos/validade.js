@@ -1,4 +1,4 @@
-function checkExpired(date, exp){
+function checkExpired(date, exp) {
     let today = new Date();
 
     myDate = new Date(date);

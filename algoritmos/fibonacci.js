@@ -8,7 +8,7 @@ function fib(n) {
         init[i] = init[i - 1] + init[i - 2];
         arr.push(init[i]);
     }
-    
+
     return arr;
 }
 
