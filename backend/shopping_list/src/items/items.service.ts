@@ -34,11 +34,12 @@ export const create = async (newItem: Item): Promise<Item> => {
 };
 
 export const update = async (itemUpdate: Item): Promise<Item[] | null> => {
-    const item = await items.filter((e) => e.id == itemUpdate.id)[0];
+    let found = await find(itemUpdate.id);
 
-    if (!item) return null;
+    if (!found) return null;
 
-    items.push(itemUpdate);
+    found.item = itemUpdate.item;
+    found.price = itemUpdate.price;
 
     return items;
 };

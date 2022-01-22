@@ -58,6 +58,7 @@ itemsRouter.patch("/:id", async (req: Request, res: Response) => {
         const existingItem: Item = await ItemService.find(id);
 
         if (existingItem) {
+            itemUpdate.id = id;
             const updatedItem = await ItemService.update(itemUpdate);
             return res.status(200).json(updatedItem);
         }
