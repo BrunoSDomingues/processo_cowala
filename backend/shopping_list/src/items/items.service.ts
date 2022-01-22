@@ -4,17 +4,17 @@ let items: Array<Item> = [
     {
         id: 1,
         nome: "arroz",
-        preco: 150,
+        preco: 1.50,
     },
     {
         id: 2,
         nome: "feijao",
-        preco: 300,
+        preco: 3.00,
     },
     {
         id: 3,
         nome: "carne",
-        preco: 1200,
+        preco: 12.00,
     },
 ];
 
