@@ -6,19 +6,21 @@ Os algoritmos estão na pasta `algoritmos` do repositório. Nela, estão contido
 
 ## Backend
 
-Os CRUDs foram desenvolvidos em Express.js e TypeScript. Como existem métodos iguais nos dois CRUDs, o código foi reaproveitado para os métodos repetidos.
+Os CRUDs foram desenvolvidos em Express.js e TypeScript. Os códigos de cada um se encontram dentro da pasta `backend`.
+
+Como existem métodos iguais nos dois CRUDs, o código foi reaproveitado para os métodos repetidos.
 
 Métodos presentes em `shopping_list`:
 
-- CREATE: Deve ser possivel criar um item na lista de mercado, o modelo a ser criado deve ter um nome, um preço e um id. Exemplo: [{ id: 1, item: arroz, preco: 1.50}]
-- UPDATE: Deve ser possivel atualizar o preço de um item. O item deve ser encontrado atraves do seu id
-- READ-ALL: Deve ser possivel listar todos itens da lista
-- READ-ONE: Deve ser possivel listar um unico item. A busca deve ser feita por id
-- DELETE: Deve ser possivel Deletar um item da lista. O item a ser deletado deve ser buscado atraves do seu id
+- CREATE: feito utilizando o método POST em `api/menu/items/`, e passando o JSON com os dados de entrada. Não é necessário passar um id.
+- UPDATE: feito utilizando o método PATCH em `api/menu/items/`, e passando um JSON com os dados a serem substituídos. É necessário informar o id.
+- READ-ALL: feito utilizando o método GET em `api/menu/items/`.
+- READ-ONE: feito utilizando o método GET em `api/menu/items/seu_id_aqui`.
+- DELETE: feito utilizando o método DELETE, se encontra na aba `api/menu/items/seu_id_aqui`.
 
 Métodos presentes em `convert_currency`:
 
-- CREATE: Deve ser possivel criar um registro no banco de dados contendo o valor enviado, o valor convertido, a moeda original e a moeda da conversão. Exemplo: [{ id:1, moedaOriginal: BRL, moedaDaConversão: USD, valorEnviado: 10, valorConvertido: 50 }]
-- READ-ALL: Deve ser possivel lista todos registros de conversão feitos
-- READ-ONE: Deve ser possivel lista um registro de conversão buscando pelo ID da conversão
-- DELETE: Deve ser possivel deletar um registro de conversão
+- CREATE: feito utilizando o método POST em `api/menu/items/`, e passando o JSON com os dados de entrada. Não é necessário passar um id.
+- READ-ALL: feito utilizando o método GET em `api/menu/items/`.
+- READ-ONE: feito utilizando o método GET em `api/menu/items/seu_id_aqui`.
+- DELETE: feito utilizando o método DELETE, se encontra na aba `api/menu/items/seu_id_aqui`.
