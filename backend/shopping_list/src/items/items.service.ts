@@ -3,18 +3,18 @@ import { Item } from "./item.interface";
 let items: Array<Item> = [
     {
         id: 1,
-        item: "arroz",
-        price: 150,
+        nome: "arroz",
+        preco: 150,
     },
     {
         id: 2,
-        item: "feijao",
-        price: 300,
+        nome: "feijao",
+        preco: 300,
     },
     {
         id: 3,
-        item: "carne",
-        price: 1200,
+        nome: "carne",
+        preco: 1200,
     },
 ];
 
@@ -38,8 +38,8 @@ export const update = async (itemUpdate: Item): Promise<Item[] | null> => {
 
     if (!found) return null;
 
-    found.item = itemUpdate.item;
-    found.price = itemUpdate.price;
+    found.nome = itemUpdate.nome;
+    found.preco = itemUpdate.preco;
 
     return items;
 };
