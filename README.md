@@ -1,10 +1,12 @@
 # Processo Seletivo Cowala
 
+Repositório para realização dos desafios do Processo Seletivo da Cowala. Os desafios estão divididos entre algoritmos e CRUDs.
+
 ## Algoritmos
 
 Os algoritmos estão na pasta `algoritmos` do repositório. Nela, estão contidos os arquivos `.ts`, os arquivos `.js` gerados e o `tsconfig.json`.
 
-## Backend
+## CRUDs
 
 Os CRUDs foram desenvolvidos em Express.js e TypeScript. Os códigos de cada um se encontram dentro da pasta `backend`.
 
